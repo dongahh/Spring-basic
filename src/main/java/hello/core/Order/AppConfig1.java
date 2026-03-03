@@ -5,13 +5,10 @@ import hello.core.Member.MemberServiceImpl;
 import hello.core.Member.MemoryMemberRepository;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import org.jspecify.annotations.NonNull;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-public class AppConfig {
+//어플리캐이션 전체를 설정하고 관리하는 파일
+public class AppConfig1 {
 
     /*AppConfig에서 하는 일은 MemberService 메서드를 통해서
     * MemberServiceImpl생성자를 실행시키고 구현체MemoryMemberRepository 를 대신해서 만들어줌.
@@ -19,25 +16,21 @@ public class AppConfig {
     *
     * >> memoryMemberRepository 객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
     */
-    @Bean
     public MemberService memberService(){
 
         return new MemberServiceImpl(MemberRepository());
     }
 
     //리팩토링 (ctrl + alt + M)
-    @Bean
-    public static  MemoryMemberRepository MemberRepository() {
+    private static @NonNull MemoryMemberRepository MemberRepository() {
         return new MemoryMemberRepository();
     }
 
-    @Bean
-    public static DiscountPolicy discountPolicy(){
+    private static DiscountPolicy discountPolicy(){
         return new FixDiscountPolicy();
         //return new RateDiscountPolicy();
     }
 
-    @Bean
     public OrderService orderService(){
         return new OrderServiceImpl(MemberRepository(), discountPolicy());
     }

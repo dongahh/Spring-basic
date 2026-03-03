@@ -5,7 +5,7 @@ import hello.core.Member.Member;
 
 public class FixDiscountPolicy implements DiscountPolicy {
 
-    private int DiscountFixCount = 1000;
+    private int DiscountFixCount = 2000;
 
     @Override
     public int discount(Member member, int prince) {
