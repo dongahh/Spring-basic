@@ -1,5 +1,6 @@
 package hello.core.Order;
 
+import hello.core.Member.MemberRepository;
 import hello.core.Member.MemberService;
 import hello.core.Member.MemberServiceImpl;
 import hello.core.Member.MemoryMemberRepository;
@@ -19,26 +20,33 @@ public class AppConfig {
     *
     * >> memoryMemberRepository 객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
     */
+
+    /*
+    * @Bean memberService() -> MemoryMemberRepository
+    * @Bean orderService() -> MemoryMemberRepository
+    *
+    * */
     @Bean
     public MemberService memberService(){
 
-        return new MemberServiceImpl(MemberRepository());
+        return new MemberServiceImpl(memberRepository());
     }
 
     //리팩토링 (ctrl + alt + M)
     @Bean
-    public static  MemoryMemberRepository MemberRepository() {
+    public  MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
     @Bean
-    public static DiscountPolicy discountPolicy(){
+    public  DiscountPolicy discountPolicy(){
         return new FixDiscountPolicy();
         //return new RateDiscountPolicy();
     }
 
     @Bean
-    public OrderService orderService(){
-        return new OrderServiceImpl(MemberRepository(), discountPolicy());
+    public  OrderService orderService(){
+
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 }
