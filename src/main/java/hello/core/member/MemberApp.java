@@ -1,6 +1,6 @@
-package hello.core.Member;
+package hello.core.member;
 
-import hello.core.Order.AppConfig;
+import hello.core.AppConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

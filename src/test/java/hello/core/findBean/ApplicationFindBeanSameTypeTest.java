@@ -1,10 +1,7 @@
 package hello.core.findBean;
 
-import hello.core.Member.MemberRepository;
-import hello.core.Member.MemoryMemberRepository;
-import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,10 +1,12 @@
-package hello.core.Order;
+package hello.core;
 
-import hello.core.Member.MemberService;
-import hello.core.Member.MemberServiceImpl;
-import hello.core.Member.MemoryMemberRepository;
+import hello.core.member.MemberService;
+import hello.core.member.MemberServiceImpl;
+import hello.core.member.MemoryMemberRepository;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
+import hello.core.order.OrderService;
+import hello.core.order.OrderServiceImpl;
 import org.jspecify.annotations.NonNull;
 
 //어플리캐이션 전체를 설정하고 관리하는 파일

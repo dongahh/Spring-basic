@@ -1,6 +1,6 @@
 package hello.core.xml;
 
-import hello.core.Member.MemberService;
+import hello.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.GenericXmlApplicationContext;

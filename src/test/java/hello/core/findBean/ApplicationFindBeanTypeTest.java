@@ -1,8 +1,8 @@
 package hello.core.findBean;
 
-import hello.core.Member.MemberService;
-import hello.core.Member.MemberServiceImpl;
-import hello.core.Order.AppConfig;
+import hello.core.member.MemberService;
+import hello.core.member.MemberServiceImpl;
+import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

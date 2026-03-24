@@ -1,8 +1,11 @@
-package hello.core.Member;
+package hello.core.member;
+
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
     //우선 리파지토리가 확정이 안 되었기 때문에 .
