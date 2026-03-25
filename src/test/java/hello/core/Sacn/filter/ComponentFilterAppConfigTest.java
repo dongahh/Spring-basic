@@ -13,15 +13,15 @@ public class ComponentFilterAppConfigTest {
 
     @Test
     void filterScan(){
-        ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppCinfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
 
         BeanA beanA = ac.getBean(BeanA.class);
         Assertions.assertThat(beanA).isNotNull();
 
-        BeanB beanB = ac.getBean(BeanB.class);
+        //BeanB beanB = ac.getBean(BeanB.class);
         org.junit.jupiter.api.Assertions.assertThrows(
                 NoSuchBeanDefinitionException.class,
-                () -> ac.getBean("BeanB" ,BeanB.class)
+                () -> ac.getBean("beanB" ,BeanB.class)
         );
 
     }
@@ -33,7 +33,7 @@ public class ComponentFilterAppConfigTest {
             includeFilters = @ComponentScan.Filter( classes= MyIncludeComponent.class),
             excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes= MyExcludeComponent.class)
     )
-    static class ComponentFilterAppCinfig{
+    static class ComponentFilterAppConfig{
 
     }
 }
