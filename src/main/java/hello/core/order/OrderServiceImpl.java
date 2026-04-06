@@ -3,12 +3,14 @@ package hello.core.order;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.discount.DiscountPolicy;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.SQLOutput;
 
 @Component
+@RequiredArgsConstructor  //final 인자값을 자동으로 생성자로 만드는 에노테이션
 public class OrderServiceImpl implements OrderService{
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
